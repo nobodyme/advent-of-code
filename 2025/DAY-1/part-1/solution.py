@@ -4,15 +4,12 @@ def rotate(last_dial_num, cur_rotation):
     rotation_dist = int(cur_rotation[1:]) % 100
 
     if direction == 'R':
-        last_dial_num += rotation_dist
-        if last_dial_num >= 100:
-            last_dial_num -= 100
+        cur_dial_num = last_dial_num + rotation_dist
     elif direction =='L':
-        last_dial_num -= rotation_dist
-        if last_dial_num < 0:
-            last_dial_num += 100
-
-    return last_dial_num
+        cur_dial_num = last_dial_num - rotation_dist
+    
+    cur_dial_num = cur_dial_num % 100
+    return cur_dial_num
 
 input_file = 'input.txt'
 rotations = []
@@ -24,6 +21,7 @@ last_dial_num = 50
 
 for cur_rotation in rotations:
     last_dial_num = rotate(last_dial_num, cur_rotation)
+    # print(f'cur_rotation {cur_rotation}, dial {last_dial_num}')
     if last_dial_num == 0:
         total_zero += 1
 
