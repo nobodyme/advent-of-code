@@ -1,18 +1,26 @@
 def is_invalid_num(num):
     str_num = str(num)
     len_num = len(str_num)
-    
-    if len_num % 2 != 0:
-        return False
-    
-    start, start_2 = 0, int(len_num / 2)
-    while start_2 < len_num:
-        if str_num[start] != str_num[start_2]:
-            return False
-        start += 1
-        start_2 += 1
+    s1, s2 = 0, 1
+    same = False
+    unset_spot = 0
 
-    return True
+    while s2 < len_num:
+        if str_num[s1] == str_num[s2]:
+            same = True
+            s1 += 1
+            s2 += 1
+        else:
+            same = False
+            unset_spot = s2
+            s1 = 0
+            s2 += 1
+
+    if same and s1 > unset_spot:
+        print(f"invalid-num {num} - s1 {s1}, un {unset_spot}")
+        return True
+    else:
+        return False
 
 def sum_invalid_range(start, end):
     sum_invalid_nums = 0
@@ -22,7 +30,7 @@ def sum_invalid_range(start, end):
 
     return sum_invalid_nums
 
-input_file = "input.txt"
+input_file = "sample.txt"
 p_ranges = []
 with open(input_file, "r") as f:
     p_ranges = f.read().strip().split(",")
