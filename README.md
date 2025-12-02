@@ -1,0 +1,1 @@
+Participating in [Advent of code 2025](https://adventofcode.com/2025) https://adventofcode.com/ as a way of detoxing from LLM 😄
