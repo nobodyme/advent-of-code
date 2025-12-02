@@ -21,9 +21,9 @@ with open(input_file) as f:
 
 total_zero = 0
 last_dial_num = 50
+
 for cur_rotation in rotations:
     last_dial_num = rotate(last_dial_num, cur_rotation)
-
     if last_dial_num == 0:
         total_zero += 1
 
