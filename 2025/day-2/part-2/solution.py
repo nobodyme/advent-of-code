@@ -38,7 +38,7 @@ def sum_invalid_range(start, end):
 
     return sum_invalid_nums
 
-input_file = "input.txt"
+input_file = "../input.txt"
 p_ranges = []
 with open(input_file, "r") as f:
     p_ranges = f.read().strip().split(",")

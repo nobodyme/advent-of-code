@@ -11,7 +11,7 @@ def rotate(last_dial_num, cur_rotation):
     cur_dial_num = cur_dial_num % 100
     return cur_dial_num
 
-input_file = 'input.txt'
+input_file = '../input.txt'
 rotations = []
 with open(input_file) as f:
     rotations = f.readlines()

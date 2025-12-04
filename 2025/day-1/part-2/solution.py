@@ -21,7 +21,7 @@ def rotate(last_dial_num, cur_rotation):
     print(f"\n{cur_rotation.strip()} to {cur_dial_num} zero_c {zero_count}")
     return zero_count, cur_dial_num
 
-input_file = 'input.txt'
+input_file = '../input.txt'
 rotations = []
 with open(input_file) as f:
     rotations = f.readlines()
