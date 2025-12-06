@@ -1,6 +1,5 @@
 def rolls_accessible(paper_rolls):
 
-    free = set()
     ROWS = len(paper_rolls)
     COLS = len(paper_rolls[0])
     directions = [(0,-1), (0,1), (-1,0), (1,0), (-1,-1), (-1,1), (1,-1), (1,1)]
@@ -32,7 +31,6 @@ def rolls_accessible(paper_rolls):
                             s = list(paper_rolls[r])
                             s[c] = 'X'
                             paper_rolls[r] = "".join(s)
-                            free.add((r, c))
                             total += 1
 
         print("\n\n")
